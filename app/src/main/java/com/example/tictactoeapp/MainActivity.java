@@ -1,7 +1,10 @@
 package com.example.tictactoeapp;
 
 import android.content.DialogInterface;
+import android.media.MediaParser;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -92,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                clickedSoune();
                 if (startGame.equals("X")){
                     btnImg1.setImageResource(R.drawable.letter_x);
                     b1 = 1;
@@ -112,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                clickedSoune();
                 if (startGame.equals("X")){
                     btnImg2.setImageResource(R.drawable.letter_x);
                     b2 = 1;
@@ -132,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                clickedSoune();
                 if (startGame.equals("X")){
                     btnImg3.setImageResource(R.drawable.letter_x);
                     b3 = 1;
@@ -151,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                clickedSoune();
                 if (startGame.equals("X")){
                     btnImg4.setImageResource(R.drawable.letter_x);
                     b4 = 1;
@@ -170,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                clickedSoune();
                 if (startGame.equals("X")){
                     btnImg5.setImageResource(R.drawable.letter_x);
                     b5 = 1;
@@ -190,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                clickedSoune();
                 if (startGame.equals("X")){
                     btnImg6.setImageResource(R.drawable.letter_x);
                     b6 = 1;
@@ -210,6 +219,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                clickedSoune();
                 if (startGame.equals("X")){
                     btnImg7.setImageResource(R.drawable.letter_x);
                     b7 = 1;
@@ -230,6 +240,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                clickedSoune();
                 if (startGame.equals("X")){
                     btnImg8.setImageResource(R.drawable.letter_x);
                     b8 = 1;
@@ -250,6 +261,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                clickedSoune();
                 if (startGame.equals("X")){
                     btnImg9.setImageResource(R.drawable.letter_x);
                     b9 = 1;
@@ -270,12 +282,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void winningGame() {
 
+
         if((b1== 1) && (b2 == 1) && (b3 == 1)){
+
+            winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player X Is Win ")
                     .setTitle("Congratulation......!!")
                     .setIcon(R.drawable.letter_x)
+
 
                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
                         @Override
@@ -322,6 +338,7 @@ public class MainActivity extends AppCompatActivity {
 
        else if((b4== 1) && (b5 == 1) && (b6 == 1)){
 
+           winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player X Is Win ")
@@ -371,6 +388,7 @@ public class MainActivity extends AppCompatActivity {
 
         } else if((b7== 1) && (b8 == 1) && (b9 == 1)){
 
+           winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player X Is Win ")
@@ -421,6 +439,7 @@ public class MainActivity extends AppCompatActivity {
 
         else if((b1== 1) && (b4 == 1) && (b7 == 1)){
 
+            winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player X Is Win ")
@@ -471,6 +490,7 @@ public class MainActivity extends AppCompatActivity {
 
         else if((b2 == 1) && (b5 == 1) && (b8 == 1)){
 
+            winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player X Is Win ")
@@ -521,6 +541,7 @@ public class MainActivity extends AppCompatActivity {
 
         else if((b3 == 1) && (b6 == 1) && (b9 == 1)){
 
+            winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player X Is Win ")
@@ -571,6 +592,7 @@ public class MainActivity extends AppCompatActivity {
 
        else if((b1 == 1) && (b5 == 1) && (b9 == 1)){
 
+           winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player X Is Win ")
@@ -621,6 +643,7 @@ public class MainActivity extends AppCompatActivity {
 
       else if((b3 == 1) && (b5 == 1) && (b7 == 1)){
 
+          winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player X Is Win ")
@@ -670,6 +693,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
       else if ((b1 == 0) && (b2 == 0) && (b3 == 0)) {
+
+          winningSound();
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Player O Is Win ")
@@ -721,6 +746,8 @@ public class MainActivity extends AppCompatActivity {
 
         else if ((b4 == 0) && (b5 == 0) && (b6 == 0)){
 
+            winningSound();
+
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player O Is Win ")
                     .setTitle("Congratulation......!!")
@@ -770,6 +797,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else if ((b7 == 0) && (b8 == 0) && (b9 == 0)){
+
+            winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player O Is Win ")
@@ -821,6 +850,8 @@ public class MainActivity extends AppCompatActivity {
 
         else if ((b1 == 0) && (b4 == 0) && (b7 == 0)){
 
+            winningSound();
+
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player O Is Win ")
                     .setTitle("Congratulation......!!")
@@ -870,6 +901,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else if ((b2 == 0) && (b5 == 0) && (b8 == 0)){
+
+            winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player O Is Win ")
@@ -921,6 +954,8 @@ public class MainActivity extends AppCompatActivity {
 
         else if ((b3 == 0) && (b6 == 0) && (b9 == 0)){
 
+            winningSound();
+
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player O Is Win ")
                     .setTitle("Congratulation......!!")
@@ -971,6 +1006,8 @@ public class MainActivity extends AppCompatActivity {
 
         else if ((b1 == 0) && (b5 == 0) && (b9 == 0)){
 
+            winningSound();
+
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player O Is Win ")
                     .setTitle("Congratulation......!!")
@@ -1020,6 +1057,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else if ((b3 == 0) && (b5 == 0) && (b7 == 0)){
+
+            winningSound();
 
             AlertDialog.Builder builder =new AlertDialog.Builder(this);
             builder.setMessage("Player O Is Win ")
@@ -1145,5 +1184,15 @@ public class MainActivity extends AppCompatActivity {
         b8 = 5;
         b9 = 5;
         i = 0;
+    }
+
+    public void clickedSoune(){
+        MediaPlayer audio = MediaPlayer.create(this, R.raw.cliked_sound);
+        audio.start();
+    }
+
+    public void winningSound(){
+        MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.winning_sound);
+        mediaPlayer.start();
     }
 }
